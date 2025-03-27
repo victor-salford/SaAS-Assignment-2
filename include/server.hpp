@@ -5,12 +5,15 @@
 #include <iostream>
 #include <memory>
 #include "session.hpp"
+#include "server.interface.hpp"
 
 using boost::asio::ip::tcp;
 
-class Server {
+class Server : public IServer {
 public:
   Server (boost::asio::io_context& context, int port);
+  void start();
+  void stop();
 
 private:
   void listen_for_incoming_connections();
