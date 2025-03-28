@@ -41,8 +41,3 @@ bool Helpers::starts_with(const std::string &str, const std::string &prefix)
     return str.size() >= prefix.size() &&
            str.compare(0, prefix.size(), prefix) == 0;
 }
-
-std::string Helpers::get_ip_address(const boost::asio::ip::tcp::socket &socket)
-{
-    return std::string();
-}

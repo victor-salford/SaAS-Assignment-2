@@ -6,6 +6,7 @@
 #include <boost/asio.hpp>
 #include "server.hpp"
 #include "server.interface.hpp"
+#include "logger.hpp"
 
 int main()
 {
@@ -18,6 +19,9 @@ int main()
         std::unique_ptr<IServer> server = std::make_unique<Server>(ctx, port);
 
         std::cout << "Server running on port 8080\n";
+
+        Logger::initialize("sever.log", Logger::Level::INFO);
+        Logger::writeToFile(Logger::Level::INFO, "Server running on port 8080");
 
         // Set up signal handling for graceful shutdown
         boost::asio::signal_set signals(ctx, SIGINT, SIGTERM);

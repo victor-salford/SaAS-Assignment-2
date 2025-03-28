@@ -4,6 +4,7 @@
 #include <string>
 #include "session.hpp"
 #include "helpers.hpp"
+#include "logger.hpp"
 
 using boost::asio::ip::tcp;
 
@@ -43,6 +44,8 @@ void Session::do_write(std::size_t length)
 
 void Session::handle_request()
 {
+        Logger::writeToFile(Logger::Level::INFO, "Request_handled...");
+
     std::string request(data_.data());
     if (!validate_input(request))
     {

@@ -21,9 +21,6 @@ public:
 
     // String utilities
     static bool starts_with(const std::string &str, const std::string &prefix);
-
-    // Network utilities
-    static std::string get_ip_address(const boost::asio::ip::tcp::socket &socket);
 };
 
 #endif
