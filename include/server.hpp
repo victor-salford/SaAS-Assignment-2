@@ -11,7 +11,7 @@ using boost::asio::ip::tcp;
 
 class Server : public IServer {
 public:
-  Server (boost::asio::io_context& context, int port);
+  Server (boost::asio::io_context& context, unsigned short port);
   void start();
   void stop();
 

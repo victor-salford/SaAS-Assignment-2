@@ -3,7 +3,7 @@
 #include "session.hpp"
 #include "server.interface.hpp"
 
-Server::Server(boost::asio::io_context& context, int port)
+Server::Server(boost::asio::io_context& context, unsigned short port)
    :acceptor(context, tcp::endpoint(tcp::v4(), port))
 {
     listen_for_incoming_connections();

@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include "session.hpp"
+#include "helpers.hpp"
 
 using boost::asio::ip::tcp;
 
